@@ -1,4 +1,7 @@
 cp vimrc ~/.vimrc
 cp tmux.conf ~/.tmux.conf
+cp zshrc ~/.zshrc
 
-#sudo apt-get install -y htop
+tmux source-file ~/.tmux.conf
+
+sudo apt-get install -y htop ranger
