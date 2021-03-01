@@ -10,7 +10,7 @@ zstyle ':vcs_info:*' enable git
 
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%~%b $vcs_info_msg_0_ $ '
 
-PLUGINS='~/dotfiles/plugins'
+PLUGINS="$HOME/dotfiles/plugins"
 
 alias jest='yarn test --no-graphql'
 
