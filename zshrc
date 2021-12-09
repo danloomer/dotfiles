@@ -35,7 +35,7 @@ function dev-tmux() {
   tmux -2 attach -d
 }
 
-function go_and_log() {
+function go-and-log() {
   goto $1
   tail -f log/development.log
 }
