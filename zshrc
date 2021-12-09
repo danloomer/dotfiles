@@ -15,24 +15,26 @@ function dev-tmux() {
   # kill old session
   tmux kill-session -t dev
 
+  SRC=$HOME/src/github.com/Shopify
+
   # create session
-  tmux new -d -s dev -n shopify
+  tmux new -d -s dev -n shopify -c $SRC
 
   # setup shopify window
   tmux send-keys "cd shopify" Enter
   tmux send-keys "tail -f log/development.log" Enter
-  tmux split-window -h
+  tmux split-window -h -c $SRC
   tmux send-keys "cd shopify" Enter
 
   # setup web window
-  tmux new-window -n web
+  tmux new-window -n web -c $SRC
   tmux send-keys "cd web" Enter
   tmux send-keys "tail -f log/development.log" Enter
-  tmux split-window -h
+  tmux split-window -h -c $SRC
   tmux send-keys "cd web" Enter
 
   # attach to session
-  tmux -2 attach -d
+  tmux -2 attach -d -c $SRC
 }
 
 function go-and-log() {
